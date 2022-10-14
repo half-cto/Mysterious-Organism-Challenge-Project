@@ -31,12 +31,12 @@ function pAequorFactory(specimenNum, dna) {
       for (let i = 0; i < 15; i++) {
         this._dna[i] === compareSample._dna[i] ? matchCount++ : null
       }
-      return `sample # ${this._specimenNum} and sample # ${compareSample._specimenNum}  has ` + Math.round(matchCount / 15 * 100) + '% DNA in common';
+      return `sample # ${this._specimenNum} and sample # ${compareSample._specimenNum}  has ` + Math.round(matchCount / .15) + '% DNA in common';
     },
 
     willLikelySurvive: function(){
       //create new aray from this. containing only 'C' and 'G' bases, then use lenght of array to calculate % and if sample will suvive
-      return this._dna.filter(x => ['C', 'G'].includes(x)).length / 15 * 100 >= 60 ? true : false
+      return this._dna.filter(x => ['C', 'G'].includes(x)).length / .15 >= 60 ? true : false
     }
   }
 }
